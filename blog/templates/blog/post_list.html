@@ -6,20 +6,12 @@
             <div>
                 <h1><a href="/https://djangogirls.org">Hanu Blog Post</a></h1>
             </div>
+    {% for post in posts %}
             <div>
-                <p>published: 11.04.2018, 11.24</p>
-                <h2><a href="/">My First Blog</a></h2>
-                <p>This is a blog on the Universe</p>
+                <h1><a href="/"> {{ post.title }}</a></h1>
+                <p>published : {{post.created_date}}</p>
+                <p>{{ post.text|linebreaksbr}}</p>
             </div>
-            
-            <div>
-                <p>published: 11.04.2018, 11.28</p>
-                <h2><a href="">My Second Blog</a></h2>
-                <p>This is a blog on Colours</p>
-            </div>
-            <div>
-                <p>Hi there!</p>
-                <p> The blog page</p>
-            </div>
+    {% endfor %}
     </body>
 </html>
